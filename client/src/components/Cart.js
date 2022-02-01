@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getCart, deleteFromCart } from '../actions/cartActions';
 import Checkout from './Checkout';
 import { checkout } from '../actions/orderActions';
+import { withRouter } from "react-router-dom";
 
 class Cart extends Component {
 
@@ -33,6 +34,7 @@ class Cart extends Component {
     } 
     
     render(){
+        console.log('cart props', this.props)
         const user = this.props.user;
         if(this.props.isAuthenticated && !this.props.cart.loading && !this.state.loaded){
             this.getCartItems(user._id);
@@ -58,7 +60,7 @@ class Cart extends Component {
                         <Card>
                             <CardBody>
                                 <CardTitle tag="h5">{item.name}</CardTitle>
-                                <CardSubtitle tag="h6">Rs. {item.price}</CardSubtitle>
+                                <CardSubtitle tag="h6">{item.price}€</CardSubtitle>
                                 <CardText>Quantity - {item.quantity}</CardText>
                                 <Button color="danger" onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
                             </CardBody>
@@ -69,11 +71,12 @@ class Cart extends Component {
                         <div class="col-md-12">
                         <Card>
                             <CardBody>
-                                <CardTitle tag="h5">Total Cost = Rs. {this.props.cart.cart.bill}</CardTitle>
+                                <CardTitle tag="h5">Total Cost = {this.props.cart.cart.total}€</CardTitle>
                                 <Checkout
                                     user={user._id}
-                                    amount={this.props.cart.cart.bill}
+                                    amount={this.props.cart.cart.total}
                                     checkout={this.props.checkout}
+                                    history={this.props.history}
                                 />                   
                             </CardBody>
                         </Card>
@@ -93,4 +96,4 @@ const mapStateToProps = (state) => ({
     user: state.auth.user,
 })
 
-export default connect(mapStateToProps, {getCart, deleteFromCart, checkout})(Cart);
+export default connect(mapStateToProps, {getCart, deleteFromCart, checkout})(withRouter(Cart));

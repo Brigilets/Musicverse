@@ -41,7 +41,7 @@ module.exports.checkout = async (req,res) => {
                     total: cart.total
                 });
                
-                /*await Cart.findByIdAndDelete({_id:cart.id});*/
+                await Cart.findByIdAndDelete({_id:cart.id});
                 
                
                 await order.save()

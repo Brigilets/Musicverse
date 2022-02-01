@@ -4,7 +4,7 @@ import { GET_CART, ADD_TO_CART, DELETE_FROM_CART, CART_LOADING } from './types';
 
 export const getCart = (id) => dispatch => {
     dispatch(setCartLoading());
-    axios.get(`/api/cart/${id}`)
+    axios.get(`/cart/${id}`)
         .then(res => dispatch({
             type: GET_CART,
             payload: res.data
@@ -13,7 +13,7 @@ export const getCart = (id) => dispatch => {
 }
 
 export const addToCart = (id, productId, quantity) => dispatch => {
-    axios.post(`/api/cart/${id}`, {productId, quantity})
+    axios.post(`/cart/${id}`, {productId, quantity})
         .then(res => dispatch({
             type: ADD_TO_CART,
             payload: res.data
@@ -22,7 +22,7 @@ export const addToCart = (id, productId, quantity) => dispatch => {
 }
 
 export const deleteFromCart = (userId, itemId) => dispatch => {
-    axios.delete(`/api/cart/${userId}/${itemId}`)
+    axios.delete(`/cart/${userId}/${itemId}`)
         .then(res => dispatch({
             type: DELETE_FROM_CART,
             payload: res.data

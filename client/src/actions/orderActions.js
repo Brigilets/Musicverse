@@ -4,7 +4,7 @@ import { GET_ORDERS, CHECKOUT, ORDERS_LOADING } from './types';
 
 export const getOrders = (id) => dispatch => {
     dispatch(setOrdersLoading());
-    axios.get(`/api/order/${id}`)
+    axios.get(`/order/${id}`)
         .then(res => dispatch({
             type: GET_ORDERS,
             payload: res.data
@@ -12,13 +12,15 @@ export const getOrders = (id) => dispatch => {
         .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
 }
 
-export const checkout = (id, source) => dispatch => {
-    axios.post(`/api/order/${id}`, {source})
+export const checkout = (id, source, history) => dispatch => {
+    console.log('from order action',history)
+    axios.post(`/order/${id}`, {source})
         .then(res => dispatch({
             type: CHECKOUT,
             payload: res.data
         }))
         .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+        history.push('/orders')
 }
 
 export const setOrdersLoading = () => {

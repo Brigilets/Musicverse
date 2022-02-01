@@ -75,7 +75,7 @@ module.exports.delete_item = async (req,res) => {
         if(itemIndex > -1)
         {
             let productItem = cart.items[itemIndex];
-            cart.bill -= productItem.quantity*productItem.price;
+            cart.total -= productItem.quantity*productItem.price;
             cart.items.splice(itemIndex,1);
         }
         cart = await cart.save();

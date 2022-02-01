@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.use('/api',authRoutes);
-app.use('/item',itemRoutes);
+app.use('/items',itemRoutes);
 app.use('/cart',cartRoutes);
 app.use('/order',orderRoutes);
 

@@ -4,12 +4,16 @@ import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button, Container} fr
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, getCart } from '../actions/cartActions';
+
 
 class Tickets extends Component {
-
+    state= {
+        loaded: false
+    }
     componentDidMount(){
         this.props.getItems();
+        
     }
 
     static propTypes = {
@@ -22,12 +26,25 @@ class Tickets extends Component {
 
     onAddToCart = async (id, productId) => {
         await this.props.addToCart(id, productId, 1);
-        alert ('Item added to Cart');
+       
+    }
+
+    getCartItems = async (id) => {
+        
+        await this.props.getCart(id);
+        this.setState({loaded: true})
     }
 
     render(){
-        const { items } = this.props.item;
         const user = this.props.user;
+        const { items } = this.props.item;
+        
+        
+        if(this.props.isAuthenticated && !this.props.cart.loading && !this.state.loaded){
+            this.getCartItems(user._id);
+        }
+        console.log('cart from tickets',this.props.cart)
+
         return (
             <div>
             <AppNavbar/>
@@ -38,7 +55,7 @@ class Tickets extends Component {
                     <Card className="mb-4">
                         <CardBody>
                             <CardTitle tag="h5">{item.title}</CardTitle>
-                            <CardSubtitle tag="h6">Rs. {item.price}</CardSubtitle>
+                            <CardSubtitle tag="h6"> {item.price}€</CardSubtitle>
                             <CardText>{item.category}</CardText>
                             {this.props.isAuthenticated ? 
                                 <Button
@@ -61,7 +78,8 @@ class Tickets extends Component {
 const mapStateToProps = (state) => ({
     item: state.item,
     isAuthenticated: state.auth.isAuthenticated,
-    user: state.auth.user
+    user: state.auth.user,
+    cart: state.cart
 })
 
-export default connect(mapStateToProps, {getItems, addToCart})(Tickets);
+export default connect(mapStateToProps, {getItems, addToCart, getCart})(Tickets);
