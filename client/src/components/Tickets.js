@@ -8,12 +8,13 @@ import { addToCart, getCart } from '../actions/cartActions';
 
 
 class Tickets extends Component {
+    
     state= {
         loaded: false
     }
+
     componentDidMount(){
-        this.props.getItems();
-        
+        this.props.getItems();   
     }
 
     static propTypes = {
@@ -22,6 +23,14 @@ class Tickets extends Component {
         isAuthenticated: PropTypes.bool,
         addToCart: PropTypes.func.isRequired,
         user: PropTypes.object.isRequired
+    }
+    
+    isItemInCart = (itemId, cartItems)  =>{
+        const itemInCart = cartItems.find( cartItem=> cartItem._id === itemId);
+        if(itemInCart){
+            return 'Added to cart'
+        }
+        return 'Add to cart'
     }
 
     onAddToCart = async (id, productId) => {
@@ -32,7 +41,7 @@ class Tickets extends Component {
     getCartItems = async (id) => {
         
         await this.props.getCart(id);
-        this.setState({loaded: true})
+        this.state.loaded = true
     }
 
     render(){
@@ -62,7 +71,7 @@ class Tickets extends Component {
                                     color="success"
                                     size="sm"
                                     onClick={this.onAddToCart.bind(this, user._id, item._id)}
-                                    >Add To Cart</Button> :
+                                    >{ this.isItemInCart(item._id, this.props.cart.items).bind(this) }</Button> :
                                     null}
                         </CardBody>
                     </Card>
