@@ -5,6 +5,8 @@ import Logout from './auth/logout';
 import LoginModal from './auth/loginModal';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom'
+
 
 class AppNavbar extends Component {
     state = {
@@ -27,18 +29,13 @@ class AppNavbar extends Component {
         const authLinks = (
             <Fragment>
                 <NavItem>
-                    <span className="navbar-text mr-3">
-                        <strong>{ user ? `Welcome ${user.name}` : ''}</strong>
-                    </span>
+                <Link to="/"><NavLink>Tickets</NavLink></Link> 
                 </NavItem>
                 <NavItem>
-                    <NavLink href="/">Tickets</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="/cart">Cart</NavLink>
+                  <Link to="/cart"><NavLink>Cart</NavLink></Link>  
                 </NavItem>
                 <NavItem className="mr-2">
-                    <NavLink href="/orders">Orders</NavLink>
+                    <Link to="/orders"><NavLink>Orders</NavLink></Link>
                 </NavItem>
                 <NavItem>
                     <Logout/>
@@ -56,7 +53,7 @@ class AppNavbar extends Component {
                 </NavItem>
             </Fragment>
         );
-
+          
         return(
             <div>
                 <Navbar color="dark" dark expand="sm" className="mb-5">
