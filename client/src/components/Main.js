@@ -5,7 +5,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cart from './Cart';
 import Orders from './Order';
-
+/*
 class Main extends Component {
     render(){
         return (
@@ -28,6 +28,27 @@ class Main extends Component {
             </div>
         )
     }
+}*/
+const Main =() =>{
+    return (
+        <div>
+            <Switch>
+                <Route path='/tickets'>
+                    <Tickets/>
+                </Route>
+                <Route path='/addItem'>
+                    <AddItem/>
+                </Route>
+                <Route path='/cart'>
+                    <Cart/>
+                </Route>
+                <Route path='/orders'>
+                    <Orders/>
+                </Route>
+                <Redirect to='/tickets'/>
+            </Switch>
+        </div>
+    )
 }
 
 export default withRouter(connect()(Main))
