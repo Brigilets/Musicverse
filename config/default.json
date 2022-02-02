@@ -1,6 +1,7 @@
 {
     "dbURI": "mongodb+srv://Brigita:Brigita123@musicverse.g5qfo.mongodb.net/festivalDB?retryWrites=true&w=majority",
     "jwtsecret": "BrigiSecurity",
-    "StripeAPIKeyBE": "sk_test_51KLjm9JuqXwK9nyivlu0CAsq0CA4aWcXqcN3xvjDIRRuQjxT9qhKVbaJIikuerqHneLhlpoYKjq2ulKDLWMFOY9H00UWMgzW9y",
-    "stripeAPIKeyFE": "pk_test_51KLjm9JuqXwK9nyi0Bc7Npv5VYnsqnX4qrXexzlF079IpXypil9F9ovfanALcr7sq9ku7vrgPgLlXN3LzhygE3ic007LmQ838p"
+    "StripeAPIKeyBE": "sk_test_51KLjm9JuqXwK9nyivlu0CAsq0CA4aWcXqcN3xvjDIRRuQjxT9qhKVbaJIikuerqHneLhlpoYKjq2ulKDLWMFOY9H00UWMgzW9y"
+  
+    
  }
