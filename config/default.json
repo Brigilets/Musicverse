@@ -1,7 +1,0 @@
-{
-    "dbURI": "mongodb+srv://Brigita:Brigita123@musicverse.g5qfo.mongodb.net/festivalDB?retryWrites=true&w=majority",
-    "jwtsecret": "BrigiSecurity",
-    "StripeAPIKeyBE": "sk_test_51KLjm9JuqXwK9nyivlu0CAsq0CA4aWcXqcN3xvjDIRRuQjxT9qhKVbaJIikuerqHneLhlpoYKjq2ulKDLWMFOY9H00UWMgzW9y"
-  
-    
- }
