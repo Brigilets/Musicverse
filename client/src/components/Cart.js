@@ -16,6 +16,8 @@ import { getCart, deleteFromCart } from "../actions/cartActions";
 import Checkout from "./Checkout";
 import { checkout } from "../actions/orderActions";
 import { withRouter } from "react-router-dom";
+import Footer from "./Footer"
+
 
 class Cart extends Component {
   state = {
@@ -51,6 +53,7 @@ class Cart extends Component {
       this.getCartItems(user._id);
     }
     return (
+      <body style={{backgroundColor:'rgba(8, 8, 8, 0.95)', minHeight:'100vh' }}>
       <div>
         <AppNavbar />
         {this.props.isAuthenticated ? (
@@ -71,12 +74,12 @@ class Cart extends Component {
         !this.props.cart.loading &&
         this.state.loaded &&
         this.props.cart.cart ? (
-          <Container>
+          <Container >
             <div className="row">
               {this.props.cart.cart.items.map((item) => (
-                <div className="col-md-4">
+                <div className="col-md-12">
                   <Card>
-                    <CardBody>
+                    <CardBody style={{border:'2px solid #f7f7f7',backgroundColor: '#000', color:'white'}}>
                       <CardTitle tag="h5">{item.name}</CardTitle>
                       <CardSubtitle tag="h6">{item.price}€</CardSubtitle>
                       <CardText>Quantity - {item.quantity}</CardText>
@@ -96,12 +99,12 @@ class Cart extends Component {
                 </div>
               ))}
               <div class="col-md-12">
-                <Card>
+                <Card className="mb-5" style={{border:'2px solid #f7f7f7',backgroundColor: 'rgba(10, 7, 7, 0.93)', color:'white'}}>
                   <CardBody>
                     <CardTitle tag="h5">
                       Total Cost = {this.props.cart.cart.total}€
                     </CardTitle>
-                    <Checkout
+                    <Checkout className="mb-4"
                       user={user._id}
                       amount={this.props.cart.cart.total}
                       checkout={this.props.checkout}
@@ -113,7 +116,9 @@ class Cart extends Component {
             </div>
           </Container>
         ) : null}
+        <Footer/>
       </div>
+      </body>
     );
   }
 }

@@ -6,6 +6,7 @@ import LoginModal from './auth/loginModal';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
+import logo from "../assests/logo.png"
 
 
 class AppNavbar extends Component {
@@ -56,16 +57,24 @@ class AppNavbar extends Component {
           
         return(
             <div>
-                <Navbar color="dark" dark expand="sm" className="mb-5">
+                <Navbar style={{backgroundColor: '#000', borderBottom:'1px solid #f7f7f7'}}  dark expand="sm" className="mb-5 navbar">
+                    
                     <Container>
-                        <NavbarBrand href="/">MUSICVERSE</NavbarBrand>
+                        <NavbarBrand href="/">
+                            <img src={logo}
+                            width="100"
+                            height="40"
+                            alt="logo"
+                            />
+                        </NavbarBrand>
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="ml-auto" navbar> 
+                            <Nav className="ml-auto" color="white" navbar> 
                                 { isAuthenticated ? authLinks: guestLinks}                               
                             </Nav>
                         </Collapse>
                     </Container>
+                
                 </Navbar>
             </div>
         );
