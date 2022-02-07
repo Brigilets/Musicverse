@@ -17,6 +17,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import logo from "../assests/logox2.png";
 import "./AppNavbar.scss";
+import LineUp from "./Lineup";
+import Home from './Home'
 
 
 const navLinks = [
@@ -80,10 +82,9 @@ class AppNavbar extends Component {
     return (
       <div>
         <Navbar
-          style={{ backgroundColor: "#000", borderBottom: "1px solid #f7f7f7" }}
           dark
           expand="sm"
-          className="navbar"
+          className="navbar navbar"
         >
           <Container>
             <NavbarBrand className="brand" href="/home">

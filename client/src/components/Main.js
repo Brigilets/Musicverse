@@ -1,4 +1,4 @@
-import { Component } from 'react';
+
 import AddItem from './AddItem';
 import Tickets from './Tickets';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
@@ -8,17 +8,12 @@ import Orders from './Order';
 import Home from './Home';
 import LineUp from './Lineup';
 
-class Main extends Component {
+/*class Main extends Component {
     render(){
         return (
             <div>
                 <Switch>
-                    <Route path="/home">
-                        <Home/>
-                    </Route>
-                    <Route path="/lineup">
-                        <LineUp/>
-                    </Route>
+                   
                     <Route path='/tickets'>
                         <Tickets/>
                     </Route>
@@ -36,11 +31,16 @@ class Main extends Component {
             </div>
         )
     }
-}
-/*const Main =() =>{
+}*/const Main =() =>{
     return (
         <div>
             <Switch>
+             <Route path="/home">
+                        <Home/>
+                    </Route>
+                    <Route path="/lineup">
+                        <LineUp/>
+                    </Route>
                 <Route path='/tickets'>
                     <Tickets/>
                 </Route>
@@ -53,10 +53,10 @@ class Main extends Component {
                 <Route path='/orders'>
                     <Orders/>
                 </Route>
-                <Redirect to='/tickets'/>
+                <Redirect to='/home'/>
             </Switch>
         </div>
     )
-}*/
+}
 
 export default withRouter(connect()(Main))

@@ -1,7 +1,6 @@
 import React from "react";
 import {Component} from 'react'
-import { Container, Card, CardTitle, CardImg, CardImgOverlay, CardText } from "reactstrap";
-
+import { Card, CardTitle, CardImg, CardImgOverlay } from "reactstrap";
 import './Home.scss'
 import mainPic from '../assests/frontPage2.jpg'
 import AppNavbar from "./AppNavbar";
@@ -12,9 +11,6 @@ class Home extends Component {
          <div className="main">
          <AppNavbar/>
          <Card inverse className="container-fluid " className="mainpage" >
-         
-              
-       
           <CardImg src={mainPic} alt="festival stage"  className="cardimg" />
           <CardImgOverlay>
            
