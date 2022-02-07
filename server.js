@@ -22,10 +22,14 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
+}else {
+  app.get('/', (req, res) => {
+    res.send("api running");
+  })
 }
 
-const dbURI = config.get("dbURI");
-const port = process.env.PORT || 4000;
+const dbURI = config.get("MONGODB_URI");
+const PORT = process.env.PORT || 4000;
 
 mongoose
   .connect(dbURI, {
@@ -35,8 +39,8 @@ mongoose
   })
   .then(() => console.log("MongoDB connected"))
   .then(() =>
-    app.listen(port, () =>
-      console.log(`Server running on http://localhost:${port}`)
+    app.listen(PORT, () =>
+      console.log(`Server running on http://localhost:${PORT}`)
     )
   )
   .catch((err) => console.log(err));
