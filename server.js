@@ -46,7 +46,11 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
 
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI,  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .then(() =>
     app.listen(PORT, () =>
