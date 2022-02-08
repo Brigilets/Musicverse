@@ -1,19 +1,17 @@
 {
   "name": "e-commerce",
   "version": "1.0.0",
-  "description": "musicverse",
+  "description": "An e-commerce app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "cd client && npm run build",
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "author": "Brigita",
-  "license": "MIT",
+  "author": "Shubham",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "concurrently": "^5.3.0",

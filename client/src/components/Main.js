@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Orders from './Order';
 import Home from './Home';
 import LineUp from './Lineup';
+import Philosophy from './Philosophy'
 
 /*class Main extends Component {
     render(){
@@ -37,6 +38,9 @@ import LineUp from './Lineup';
             <Switch>
              <Route path="/home">
                         <Home/>
+                    </Route>
+                    <Route path="/philosophy">
+                        <Philosophy/>
                     </Route>
                     <Route path="/lineup">
                         <LineUp/>
