@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const ObjectID = require('mongodb').ObjectID
+const ObjectId = require('mongodb').ObjectId
 
 const OrderSchema = new Schema({
     _id:{
-        type: String
+        type: ObjectId
     },
     userId: {
         type: String,
