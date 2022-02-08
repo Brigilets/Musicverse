@@ -2,11 +2,18 @@
     width: 100vw;
     height: 100vh;
    margin: 0;
+   
 }
 .text{
     font-family: 'Bungee Inline', cursive;
-    padding: 1em 1em;
+    padding: 2em 2em;
 }
 .card{
     margin-top: 1em;
+    padding: 3em;
+    align-items: center ;
+}
+.cards{
+    display: flex;
+    justify-content: center;
 }
