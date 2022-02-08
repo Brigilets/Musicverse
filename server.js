@@ -46,11 +46,7 @@ const dbURI = MONGODB_URI;
 
 
 mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(dbURI)
   .then(() => console.log("MongoDB connected"))
   .then(() =>
     app.listen(PORT, () =>
