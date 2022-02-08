@@ -35,7 +35,7 @@ const navLinks = [
   const NavListItem = ({ className, navLink, title }) => (
     <NavItem className={className}>
       <Link to={navLink}>
-        <NavLink>{title}</NavLink>
+       {title}
       </Link>
     </NavItem>
   );
@@ -60,8 +60,8 @@ class AppNavbar extends Component {
 
     const authLinks = (
       <Fragment>
-         { navLinks.map((link)=>
-          <NavListItem className={link.className} navLink={link.navlink} title={link.title} />
+         { navLinks.map((link, key)=>
+          <NavListItem key={key} className={link.className} navLink={link.navlink} title={link.title} />
           )}
      
         <NavItem>

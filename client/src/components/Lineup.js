@@ -12,8 +12,8 @@ const LineUp =()=>{
         <div>
             <AppNavbar/>
             <List className="text-center bg-light lineup">
-            { lineup.map((artist)=>
-              <li>{artist}</li>
+            { lineup.map((artist,key)=>
+              <li key={key} >{artist}</li>
                 )}
             </List>
             <Footer/>

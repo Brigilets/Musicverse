@@ -3,6 +3,7 @@
 # dependencies
 config/
 node_modules/
+.env
 
 
 /.pnp
