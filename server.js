@@ -42,11 +42,11 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
   })
 }
 
-const dbURI = MONGODB_URI;
+
 
 
 mongoose
-  .connect(dbURI)
+  .connect(MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
   .then(() =>
     app.listen(PORT, () =>
