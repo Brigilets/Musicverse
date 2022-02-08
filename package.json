@@ -8,7 +8,6 @@
     "build-client": "cd client && npm install && npm run build",
     "build": "npm run build client && npm install",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Shubham",
