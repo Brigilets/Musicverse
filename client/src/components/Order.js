@@ -30,10 +30,8 @@ class Orders extends Component {
             this.ongetOrders(user._id);
         }
         return(
-            <body style={{backgroundColor:'rgba(8, 8, 8, 0.95)', minHeight:'100vh' }}>
-             <AppNavbar/>
             <div>
-               
+            <AppNavbar/>
                 {this.props.isAuthenticated ?
                     <Fragment>
                         {this.props.order.orders!==[] ? null :
@@ -44,25 +42,25 @@ class Orders extends Component {
                 }
 
                 {this.props.isAuthenticated && !this.props.order.loading && this.state.loaded && this.props.order.orders.length?
-                    <Container className='mb-4'>
+                    <Container className='mb-4 bg-light' className="main">
                         <div className="row">
                             {this.props.order.orders.map((order,key)=>(
                                 <div key={key} className="col-md-12">
-                                    <Card className="mb-4" style={{border:'2px solid #f7f7f7',backgroundColor: 'rgba(10, 7, 7, 0.93)', color:'white'}}>
-                                        <CardBody>
-                                            <CardTitle tag="h4">{order.items.length} items - Total cost: {order.total}€</CardTitle>
-                                            <div className="row">
+                                    <Card className="card mt-2 mb-3 border border-dark " >
+                                        <CardBody className='body'>
+                                            
+                                            
                                             {order.items.map((item,key)=>(
-                                                <div key={key} className="col-md-4">
-                                                    <Card className="mb-2" style={{border:'2px solid #f7f7f7',backgroundColor: '#292b2c', color:'white'}}>
-                                                        <CardBody>
-                                                            <CardTitle tag="h5">{item.name} ({item.quantity} pieces)</CardTitle>
-                                                            <CardSubtitle tag="h6">{item.price}€/piece</CardSubtitle>
-                                                        </CardBody>
-                                                    </Card>
+                                                <div key={key} className="col-md-4" className='text'>
+                                                   
+                                                      
+                                                            {item.name} ({item.quantity} pieces) {item.price}€/piece
+                                                           
+                                                       
+                                                 
                                                 </div>
                                             ))}
-                                            </div>
+                                           
                                         </CardBody>
                                     </Card>
                                     <br/>
@@ -74,7 +72,6 @@ class Orders extends Component {
                 :null}
                 <Footer/>
             </div>
-            </body>
         )
     }
 }
