@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv').config();
+const {jwtsecret} =require('../const.js')
 const bcrypt = require('bcrypt');
 
 module.exports.signup = (req,res) => {
@@ -25,7 +25,7 @@ module.exports.signup = (req,res) => {
                     .then(user => {
                         jwt.sign(
                             { id: user._id },
-                            process.env.jwtsecret,
+                            jwtsecret,
                             { expiresIn: 3600 },
                             (err, token) => {
                                 if(err) throw err;

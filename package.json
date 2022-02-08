@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node server.js",
     "build-client": "cd client && npm install && npm run build",
-    "build": "npm run build-client && npm install",
+    "build": "npm run build client && npm install",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"cd client && npm start\""
   },
   "author": "Shubham",
   "license": "ISC",

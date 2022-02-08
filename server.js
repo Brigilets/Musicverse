@@ -1,15 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const dotenv = require("dotenv").config();
-
-console.log(dotenv)
+//const dotenv = require("dotenv").config();
+const {MONGODB_URI} = require('./const')
+const {prod }= require('./const')
+const {PORT} = require('./const')
 
 const authRoutes = require("./routes/auth");
 const itemRoutes = require("./routes/item");
 const cartRoutes = require("./routes/cart");
 const orderRoutes = require("./routes/order");
 
+console.log(MONGODB_URI,prod,PORT)
 const app = express();
 app.use(express.json());
 
@@ -29,7 +31,7 @@ app.use("/order", orderRoutes);
     res.send("api running");
   })
 }*/
-if (process.env.NODE_ENV === "production") {
+if ( prod) {
 app.use(express.static(path.resolve(__dirname, './client/build')));
   app.get('*', function(request, response) {
     response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
@@ -40,8 +42,8 @@ app.use(express.static(path.resolve(__dirname, './client/build')));
   })
 }
 
-const dbURI = process.env.MONGODB_URI;
-const PORT = process.env.PORT || 4000;
+const dbURI = MONGODB_URI;
+
 
 mongoose
   .connect(dbURI, {

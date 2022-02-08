@@ -1,8 +1,9 @@
 const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const User = require('../models/User');
-const dotenv = require('dotenv').config();
-const stripe = require('stripe')(process.env.StripeAPIKeyBE);
+//const dotenv = require('dotenv').config();
+const {StripeAPIKeyBE} = require('../const');
+const stripe = require('stripe')(StripeAPIKeyBE);
 
 module.exports.get_orders = async (req,res) => {
     const userId = req.params.id;
