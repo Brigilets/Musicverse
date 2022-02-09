@@ -1,7 +1,6 @@
 import React from "react";
 import {Component} from 'react'
 import { Card, CardTitle, CardImg, CardImgOverlay } from "reactstrap";
-import './Home.scss'
 import mainPic from '../assests/frontPage2.jpg'
 import AppNavbar from "./AppNavbar";
 import Footer from "./Footer";

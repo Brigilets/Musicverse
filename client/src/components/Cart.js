@@ -53,8 +53,8 @@ class Cart extends Component {
       this.getCartItems(user._id);
     }
     return (
-      <body style={{backgroundColor:'rgba(8, 8, 8, 0.95)', minHeight:'100vh' }}>
-      <div>
+      
+      <div className="body bg-light">
         <AppNavbar />
         {this.props.isAuthenticated ? (
           <Fragment>
@@ -74,15 +74,15 @@ class Cart extends Component {
         !this.props.cart.loading &&
         this.state.loaded &&
         this.props.cart.cart ? (
-          <Container >
+          <Container className="bg-light">
             <div className="row">
               {this.props.cart.cart.items.map((item) => (
                 <div className="col-md-12">
                   <Card>
-                    <CardBody style={{border:'2px solid #f7f7f7',backgroundColor: '#000', color:'white'}}>
+                    <CardBody className="cardbody bg-light border border-dark" >
                       <CardTitle tag="h5">{item.name}</CardTitle>
                       <CardSubtitle tag="h6">{item.price}€</CardSubtitle>
-                      <CardText>Quantity - {item.quantity}</CardText>
+                      <CardText>x {item.quantity}</CardText>
                       <Button
                         color="danger"
                         onClick={this.onDeleteFromCart.bind(
@@ -99,7 +99,7 @@ class Cart extends Component {
                 </div>
               ))}
               <div class="col-md-12">
-                <Card className="mb-5" style={{border:'2px solid #f7f7f7',backgroundColor: 'rgba(10, 7, 7, 0.93)', color:'white'}}>
+                <Card className="mb-5 bg-light" >
                   <CardBody>
                     <CardTitle tag="h5">
                       Total Cost = {this.props.cart.cart.total}€
@@ -118,7 +118,7 @@ class Cart extends Component {
         ) : null}
         <Footer/>
       </div>
-      </body>
+    
     );
   }
 }

@@ -13,7 +13,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently \"npm run server\" \"cd client && npm start\""
   },
-  "author": "Shubham",
+  "author": "Brigita Sabutyte",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

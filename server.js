@@ -11,7 +11,7 @@ const itemRoutes = require("./routes/item");
 const cartRoutes = require("./routes/cart");
 const orderRoutes = require("./routes/order");
 
-console.log(MONGODB_URI,prod,PORT)
+console.log(MONGODB_URI, prod, PORT)
 const app = express();
 app.use(express.json());
 

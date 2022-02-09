@@ -14,6 +14,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getItems } from "../actions/itemActions";
 import { addToCart, getCart } from "../actions/cartActions";
+import './main.scss'
 
 
 class Tickets extends Component {
@@ -48,21 +49,21 @@ class Tickets extends Component {
     const { items } = this.props.item;
     console.log("From Tickets", this.props);
     return (
-      <body style={{backgroundColor:'rgba(8, 8, 8, 0.95)', minHeight:'100vh' }}>
-      <div >
+    
+      <div className="main bg-light" >
         <AppNavbar />
-        <Container  >
+        <Container className="bg-light" >
           <div className="row mb-4">
             {items.map((item) => (
-              <div key={item.title} className="col-md-12">
-                <Card className="mb-5" style={{border:'2px solid #f7f7f7',backgroundColor: 'rgba(10, 7, 7, 0.93)', color:'white'}}>
-                  <CardBody>
+              <div key={item.title} className="col-md-12 bg-light">
+                <Card className="mb-5 card bg-light">
+                  <CardBody className="card">
                     <CardTitle tag="h5">{item.title}</CardTitle>
-                    <CardSubtitle tag="h6"> {item.price}€</CardSubtitle>
+                    <CardSubtitle tag="h6" > {item.price}€</CardSubtitle>
                     <CardText>{item.category}</CardText>
                     {this.props.isAuthenticated ? (
                       <Button
-                        color="secondary"
+                        color="dark"
                         size="sm"
                         onClick={this.onAddToCart.bind(
                           this,
@@ -84,10 +85,10 @@ class Tickets extends Component {
             ))}
           </div>
         </Container>
-
+        <Footer/>
       </div>
-      <Footer/>
-      </body>
+    
+     
     );
   }
   static propTypes = {

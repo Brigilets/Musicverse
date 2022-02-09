@@ -16,7 +16,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import logo from "../assests/logox2.png";
-import "./AppNavbar.scss";
+//import "./AppNavbar.scss";
 import LineUp from "./Lineup";
 import Home from './Home'
 import Philosophy from "./Philosophy";

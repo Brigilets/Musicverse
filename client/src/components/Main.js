@@ -9,6 +9,7 @@ import Home from './Home';
 import LineUp from './Lineup';
 import Philosophy from './Philosophy'
 
+
 /*class Main extends Component {
     render(){
         return (

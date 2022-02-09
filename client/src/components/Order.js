@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getOrders } from '../actions/orderActions';
 import {Card, CardBody, CardTitle, CardSubtitle, Alert, Container} from 'reactstrap';
 import Footer from './Footer';
-import './Order.scss'
+
 
 class Orders extends Component {
 
@@ -47,7 +47,7 @@ class Orders extends Component {
                         <div className="row">
                             {this.props.order.orders.map((order,key)=>(
                                 <div key={key} className="col-md-12">
-                                    <Card className="card mt-2 mb-3 border border-dark " >
+                                    <Card className="card-order mt-2 mb-3 border border-dark " >
                                         <CardBody className='body'>
                                             
                                             
