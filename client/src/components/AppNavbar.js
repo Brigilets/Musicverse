@@ -22,7 +22,7 @@ import Philosophy from "./Philosophy";
 
 
 const navLinks = [
-    { navlink: "/home", title: "Home", className: "navlink" },
+    { navlink: "/home", title: "Home", className: "navlink text-white" },
     { navlink: "/lineup", title: "Lineup", className: "navlink" },
     { navlink: "/tickets", title: "Tickets", className: "navlink" },
     { navlink: "/cart", title: "Cart", className: "navlink" },
@@ -32,11 +32,12 @@ const navLinks = [
 
 
   const NavListItem = ({ className, navLink, title }) => (
+    <Link to={navLink}>
     <NavItem className={className}>
-      <Link to={navLink}>
        {title}
-      </Link>
+     
     </NavItem>
+    </Link>
   );
 class AppNavbar extends Component {
   state = {
