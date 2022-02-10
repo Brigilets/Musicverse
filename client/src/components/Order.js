@@ -22,14 +22,16 @@ class Orders extends Component {
 
     ongetOrders = async (id) => {
         await this.props.getOrders(id);
-        this.state.loaded = true;
+       this.setState({loaded: true})
     }
 
     render(){
         const user = this.props.user;
+        console.log(user)
         if(this.props.isAuthenticated && !this.props.order.loading && !this.state.loaded){
             this.ongetOrders(user._id);
         }
+        console.log(this.state.loaded)
         return(
             <div>
             <AppNavbar/>
@@ -45,10 +47,11 @@ class Orders extends Component {
                 {this.props.isAuthenticated && !this.props.order.loading && this.state.loaded && this.props.order.orders.length?
                     <Container className='mb-4 bg-light' className="main">
                         <div className="row">
+
                             {this.props.order.orders.map((order,key)=>(
                                 <div key={key} className="col-md-12">
-                                    <Card className="card-order mt-2 mb-3 border border-dark " >
-                                        <CardBody className='body'>
+                                    <Card className="card-order border border-dark " >
+                                        <CardBody >
                                             
                                             
                                             {order.items.map((item,key)=>(
