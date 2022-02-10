@@ -1,12 +1,14 @@
 .main{
     background-size: contain;
     
+    
 }
 
 .mainpage{
     margin:0;
     padding: 0;
     border: none;
+    min-height: fit-content;
     overflow:hidden;
 }
 .cardImg{
@@ -23,6 +25,7 @@
     margin-top: 2em;
 }
 .text{
+   
     font-family: 'Bungee Inline', cursive;
     font-weight: 200;
     color: #000;

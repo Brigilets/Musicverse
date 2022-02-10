@@ -7,7 +7,8 @@ import Cart from './Cart';
 import Orders from './Order';
 import Home from './Home';
 import LineUp from './Lineup';
-import Philosophy from './Philosophy'
+import Philosophy from './Philosophy';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 /*class Main extends Component {

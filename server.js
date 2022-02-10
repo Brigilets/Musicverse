@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-//const dotenv = require("dotenv").config();
 const {MONGODB_URI} = require('./const')
 const {prod }= require('./const')
 const {PORT} = require('./const')
@@ -11,7 +10,6 @@ const itemRoutes = require("./routes/item");
 const cartRoutes = require("./routes/cart");
 const orderRoutes = require("./routes/order");
 
-console.log(MONGODB_URI, prod, PORT)
 const app = express();
 app.use(express.json());
 
