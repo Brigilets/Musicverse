@@ -7,7 +7,7 @@ module.exports.signup = (req,res) => {
     const { name, email, password } = req.body;
 
     if(!name || !email || !password){
-        res.status(400).json({msg: 'Please enter all fields'});
+        res.status(400).json({msg: 'Please fill out all the fields'});
     }
 
     User.findOne({email})
@@ -48,7 +48,7 @@ module.exports.signup = (req,res) => {
 module.exports.login = async (req,res) => {
     const { email, password } = req.body;
     if(!email || !password){
-        res.status(400).json({msg: 'Please enter all fields'});
+        res.status(400).json({msg: 'Please fill out all the fields'});
     }
     User.findOne({email})
         .then(user => {

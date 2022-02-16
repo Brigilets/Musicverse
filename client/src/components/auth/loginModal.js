@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
+import './login.scss'
 
 class LoginModal extends Component {
     state = {
@@ -76,7 +77,7 @@ class LoginModal extends Component {
     render(){
         return(
             <div className="container">
-                <Button color="success" className="btn btn-sm"><NavLink onClick={this.toggle} href="#"><span className="text-dark"><b>Login</b></span></NavLink></Button>
+                <Button color="dark" className="btn btn-sm border border-light"><NavLink onClick={this.toggle} href="#"><span className="text-light btn-text"><b>Login</b></span></NavLink></Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -109,6 +110,7 @@ class LoginModal extends Component {
                                 <Button
                                     color="dark"
                                     style={{marginTop: '2rem'}}
+                                    className='btn-text'
                                     block
                                 >Login</Button>
                             </FormGroup>
