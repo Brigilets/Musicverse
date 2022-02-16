@@ -6,8 +6,7 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  Container,
-  NavLink,
+  Container
 } from "reactstrap";
 import RegisterModal from "./auth/registerModal";
 import Logout from "./auth/logout";
@@ -15,10 +14,6 @@ import LoginModal from "./auth/loginModal";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import logo from "../assests/logox2.png";
-import LineUp from "./Lineup";
-import Home from './Home'
-import Philosophy from "./Philosophy";
 
 
 const navLinks = [

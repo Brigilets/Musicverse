@@ -7,7 +7,7 @@ import Footer from "./Footer";
 class Home extends Component {
  render(){
      return(
-         <div className="main">
+         <div className="main" styles={{overflow: 'hidden !important'}}>
          <AppNavbar/>
          <Card inverse className="container-fluid " className="mainpage" >
           <CardImg src={mainPic} alt="festival stage"  className="cardimg" />

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Navbar, NavbarBrand, NavBarBrand } from 'reactstrap';
+import { Navbar} from 'reactstrap';
 
 class Footer extends Component {
    render(){
