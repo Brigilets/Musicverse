@@ -3,7 +3,7 @@ import { Card, CardTitle, CardImg, CardImgOverlay, CardText } from "reactstrap";
 import coverPic from '../assests/philosophy.jpg'
 import AppNavbar from "./AppNavbar";
 import Footer from "./Footer";
-import './main.scss'
+
 
 const Philosophy = () =>{
     return(
@@ -22,7 +22,6 @@ const Philosophy = () =>{
                 </CardImgOverlay>
             </Card>
            <Footer/> 
-
         </div>
     )
     

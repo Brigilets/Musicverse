@@ -76,8 +76,8 @@ class Cart extends Component {
         this.props.cart.cart ? (
           <Container className="bg-light">
             <div className="row">
-              {this.props.cart.cart.items.map((item) => (
-                <div className="col-md-12">
+              {this.props.cart.cart.items.map((item,key) => (
+                <div key={key} className="col-md-12">
                   <Card>
                     <CardBody className="cardbody bg-light border border-dark" >
                       <CardTitle tag="h5">{item.name}</CardTitle>
@@ -98,7 +98,7 @@ class Cart extends Component {
                   <br />
                 </div>
               ))}
-              <div class="col-md-12">
+              <div className="col-md-12">
                 <Card className="mb-5 bg-light" >
                   <CardBody>
                     <CardTitle tag="h5">
