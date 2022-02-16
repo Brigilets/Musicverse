@@ -50,7 +50,7 @@ class Tickets extends Component {
     console.log("From Tickets", this.props);
     return (
     
-      <div className="main bg-light" >
+      <div className="mainTicket bg-light" >
         <AppNavbar />
         <Container className="bg-light" >
           <div className="row mb-4">
