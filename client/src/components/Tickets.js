@@ -27,13 +27,13 @@ class Tickets extends Component {
   }
 
   isItemInCart = (itemId, cartItems) => {
-    console.log("itemId", itemId);
-    console.log("cartItems", cartItems);
+    console.log("itemId from tickets", itemId);
+    console.log("cartItems from tickets", cartItems);
 
     const itemInCart = cartItems.find(
       (cartItem) => cartItem.productId === itemId
     );
-    console.log("item in cart", itemInCart);
+    console.log("item in cart from tickets", itemInCart);
     if (itemInCart) {
       return "Added to Cart";
     }
