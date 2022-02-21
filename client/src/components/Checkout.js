@@ -2,9 +2,9 @@ import StripeCheckout from "react-stripe-checkout";
 
 const STRIPE_PUBLISHABLE = process.env.REACT_APP_STRIPE_API_KEY;
 
-const onToken = (user, checkout, history) => async (token) =>{
+const onToken = (user, checkout, history) => (token) =>{
  try{
-   await checkout(user, token.id, history);
+    checkout(user, token.id, history);
  }catch(err){
 console.error(err)
  } 

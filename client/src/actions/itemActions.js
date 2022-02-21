@@ -5,19 +5,21 @@ import { returnErrors } from './errorActions';
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading());
     axios.get('/items')
-        .then(res => dispatch({
+        .then(res => {console.log('res getItem', res) 
+            return dispatch({
             type: GET_ITEMS,
             payload: res.data
-        }))
+        })})
         .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
 }
 
 export const addItem = (item) => (dispatch) => {
     axios.post('/items', item)
-        .then(res => dispatch({
+        .then(res => {console.log('res add to cart',res)
+        dispatch({
             type: ADD_ITEM,
             payload: res.data
-        }))
+        })})
         .catch(err => dispatch(returnErrors(err.response.data, err.response.status)))
 }
 

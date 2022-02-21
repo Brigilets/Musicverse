@@ -36,22 +36,23 @@ const navLinks = [
   );
 class AppNavbar extends Component {
   state = {
-    isOpen: false,
+    isOpen: false
   };
 
   static propTypes = {
-    auth: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
   };
 
   toggle = () => {
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !this.state.isOpen
     });
   };
 
 
   render() {
     const { isAuthenticated, user } = this.props.auth;
+
 
     const authLinks = (
       <Fragment>
@@ -79,9 +80,9 @@ class AppNavbar extends Component {
     return (
       <div>
         <Navbar
-          dark
+         dark
           expand="sm"
-          className="navbar navbar"
+          className="navbar navbar-fluid"
         >
           <Container>
             <NavbarBrand className="brand" href="/home">

@@ -22,7 +22,7 @@ class Orders extends Component {
 
     ongetOrders = async (id) => {
         await this.props.getOrders(id);
-       this.setState({loaded: true})
+       this.state.loaded = true; /*setState({loaded: true})*/
     }
 
     render(){
@@ -31,7 +31,7 @@ class Orders extends Component {
         if(this.props.isAuthenticated && !this.props.order.loading && !this.state.loaded){
             this.ongetOrders(user._id);
         }
-        console.log(this.state.loaded)
+        console.log('this state loaded order', this.state.loaded)
         return(
             <div>
             <AppNavbar/>
@@ -45,18 +45,19 @@ class Orders extends Component {
                 }
 
                 {this.props.isAuthenticated && !this.props.order.loading && this.state.loaded && this.props.order.orders.length?
-                    <Container className='bg-light' className="main">
+                    <Container className='bg-light' className="main-order">
                         <div className="row justify-content-center mt-2 mb-2 pt-1">
 
                             {this.props.order.orders.map((order,key)=>(
-                                <div key={key} className="col-md-8">
-                                    <Card className="card-order p-0 border border-dark " >
-                                        <CardBody className='pt-1' >
+                                <div key={key} className=" col-md-10 justify-content-center ">
+                                    <Card className="card  p-0 ml-6 border justify-content-center border-dark " >
+                                        <CardBody className='pt-1 card-body' >
 
                                             {order.items.map((item,key)=>(
                                                 <div key={key} className="col-md-4" className='text'>
 
-                                                            {item.name}-{item.quantity} {item.price}€
+                                                            {item.name} - {item.quantity}<br />
+                                                             {item.price}€
                                                 </div>
                                             ))}
                                         </CardBody>

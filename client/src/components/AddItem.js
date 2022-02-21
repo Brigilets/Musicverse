@@ -10,7 +10,6 @@ class AddItem extends Component {
     state = {
         title: '',
         description: '',
-        category: '',
         price: '',
     }
 
@@ -28,7 +27,6 @@ class AddItem extends Component {
         const newItem = {
             title: this.state.title,
             description: this.state.description,
-            category: this.state.category,
             price: this.state.price
         }
 
@@ -63,16 +61,6 @@ class AddItem extends Component {
                                 placeholder="Description of the item"
                                 onChange={this.onChange}
                             />
-                            <br/>
-                            <Label for="category">Category</Label>
-                            <Input 
-                                type="text"
-                                name="category" 
-                                id="category"
-                                placeholder="Category of the item"
-                                onChange={this.onChange}
-                                >
-                            </Input>
                             <br/>
                             <Label for="price">Price</Label>
                             <Input

@@ -49,7 +49,6 @@ class Tickets extends Component {
     const { items } = this.props.item;
     console.log("From Tickets", this.props);
     return (
-    
       <div className="mainTicket bg-light" >
         <AppNavbar />
         <Container className="bg-light" >
@@ -60,7 +59,6 @@ class Tickets extends Component {
                   <CardBody className="card">
                     <CardTitle tag="h5">{item.title}</CardTitle>
                     <CardSubtitle tag="h6" > {item.price}€</CardSubtitle>
-                    <CardText>{item.category}</CardText>
                     {this.props.isAuthenticated ? (
                       <Button
                         color="dark"
@@ -76,7 +74,7 @@ class Tickets extends Component {
                           : this.isItemInCart(
                               item._id,
                               this.props.cart.cart.items
-                            )}
+                          )}
                       </Button>
                     ) : null}
                   </CardBody>

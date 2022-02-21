@@ -53,7 +53,6 @@ class Cart extends Component {
       this.getCartItems(user._id);
     }
     return (
-      
       <div className="body bg-light">
         <AppNavbar />
         {this.props.isAuthenticated ? (
@@ -77,7 +76,7 @@ class Cart extends Component {
           <Container className="bg-light">
             <div className="row">
               {this.props.cart.cart.items.map((item,key) => (
-                <div key={key} className="col-md-12">
+                <div key={key} className="col-md-10">
                   <Card>
                     <CardBody className="cardbody bg-light border border-dark" >
                       <CardTitle tag="h5">{item.name}</CardTitle>

@@ -17,6 +17,9 @@ module.exports.checkout = async (req,res) => {
         let cart = await Cart.findOne({userId});
         let user = await User.findOne({_id: userId});
         const email = user.email;
+
+        console.log('cart', cart )
+              console.log('cart total', cart.total)
         if(cart){
             /*const charge = await stripe.charges.create({
                 amount: cart.total,
@@ -33,6 +36,7 @@ module.exports.checkout = async (req,res) => {
                 source,
                
               })
+              
             console.log('charge from stripe',charge)
             if(!charge) throw Error('Payment failed');
             if(charge){
@@ -44,13 +48,13 @@ module.exports.checkout = async (req,res) => {
                
                 await Cart.findByIdAndDelete({_id:cart.id});
                 
-               
+               console.log('order after checkout', order)
                 await order.save()
                 return res.status(201).send(order);
             }
         }
         else{
-            res.status(500).send("You do not have items in cart");
+            res.status(500).json({message: "You do not have items in cart"}); 
         }
     }
     catch(err){

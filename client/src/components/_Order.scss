@@ -1,13 +1,44 @@
-.main{
+.main-order{
+   // display: grid;
+    //grid-template-columns: repeat(12, 1fr);
+    //grid-template-rows: repeat(12, 1fr);
     width: 100vw;
     height: 100vh;
    margin: 0;
-   
+
+
 }
 .text{
     font-family: 'Bungee Inline', cursive;
  
 }
 .card-order{
+  
+    margin-left: 10%;
+    margin-right: 10%;
+    grid-row: 1/6;
+    align-content: center;
     align-items: center ;
 }
+
+ @media(min-width: 740px) {
+     .card-order{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column: 12/12;
+        grid-template-rows: auto;
+        padding: 10%;
+        margin-left: 50%;
+        justify-self: center;
+        align-content: center;
+        align-items: stretch;
+        align-self: center;
+        width:50%;
+       
+     }
+    /* .card-text{
+         display: grid;
+         grid-template-columns: 2/12;
+         padding:10%;
+     }*/
+ }

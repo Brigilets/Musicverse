@@ -6,11 +6,11 @@ export const getCart = (id) => (dispatch) => {
   dispatch(setCartLoading());
   axios
     .get(`/cart/${id}`)
-    .then((res) =>
+    .then((res) =>{ console.log('getCart res data', res)
       dispatch({
         type: GET_CART,
         payload: res.data,
-      })
+      })}
     )
     .catch((err) =>
       dispatch(returnErrors(err.response.data, err.response.status))
@@ -20,11 +20,11 @@ export const getCart = (id) => (dispatch) => {
 export const addToCart = (id, productId, quantity) => (dispatch) => {
   axios
     .post(`/cart/${id}`, { productId, quantity })
-    .then((res) =>
+    .then((res) =>{console.log('res add to cart',res)
       dispatch({
         type: ADD_TO_CART,
         payload: res.data,
-      })
+      })}
     )
     .catch((err) =>
       dispatch(returnErrors(err.response.data, err.response.status))

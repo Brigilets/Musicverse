@@ -1,12 +1,23 @@
 .main{
-background-size: cover;
+   
+  background-size: contain;
+ 
 }
-.mainpage{
-    margin:0;
+.phil-page{
+    position: relative;
+    //margin:0;
     padding: 0;
     border: none;
-    min-height: fit-content;
-    overflow:hidden;
+    font-size: 0.8em;
+    font-weight: 900;
+    //min-height: fit-content;
+    line-height: 1.8rem;
+    overflow-y:auto;
+    background-size: contain;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+   grid-column: 12/1;
+    
 }
 .cardImg{
     opacity: 0.4;
@@ -19,28 +30,37 @@ background-size: cover;
     font-weight: 300;
     color: #000;
     text-align: center;
-    margin-top: 1em;
+    //margin-top: 1em;
 }
-.text{
-   
+.phil-text{
+   /* position: relative;
+    align-content: space-between;
+    padding-left: 43%;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.8rem;
+    overflow-y: hidden;*/
     font-family: 'Bungee Inline', cursive;
     font-weight: 200;
     color: #000;
     text-align: center;
     font-size: 1em;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 1em;
+    min-height: fit-content;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    
 }
 
 @media (min-width: 740px) {
     .main{
         overflow-y: hidden;
         }
-    .text{
+    .phil-text{
         padding-left: 1.25em;
         padding-right: 1.25em;
-        font-size: 1.5em;
-
+        font-size: 1.8em;
+        line-height: 1.5;
     }
     .header{
         margin-top: 2em;
