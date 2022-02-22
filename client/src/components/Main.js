@@ -8,6 +8,7 @@ import Orders from './Order';
 import Home from './Home';
 import LineUp from './Lineup';
 import Philosophy from './Philosophy';
+import FAQ from './Faq';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Main =() =>{
@@ -31,6 +32,9 @@ const Main =() =>{
                 </Route>
                 <Route path='/cart'>
                     <Cart/>
+                </Route>
+                <Route path='/faq'>
+                    <FAQ/>
                 </Route>
                 <Route path='/orders'>
                     <Orders/>

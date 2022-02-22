@@ -22,7 +22,8 @@ const navLinks = [
     { navlink: "/tickets", title: "Tickets", className: "navlink" },
     { navlink: "/cart", title: "Cart", className: "navlink" },
     { navlink: "/orders", title: "Orders", className: "navlink mr-2" },
-    {navlink: "/philosophy", title: "Philosophy", className: "navlink"}
+    {navlink: "/philosophy", title: "Philosophy", className: "navlink"},
+    {navlink: "/faq", title: "F.A.Q", className: "navlink"},
   ];
 
 
