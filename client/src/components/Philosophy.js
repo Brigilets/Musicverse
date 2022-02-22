@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardTitle, CardImg, CardImgOverlay, CardText } from "reactstrap";
-import coverPic from '../assests/philosophy.jpg'
+import coverPic from '../assests/Optimized-philosophy.jpg'
 import AppNavbar from "./AppNavbar";
 import Footer from "./Footer";
 
