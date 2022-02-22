@@ -22,33 +22,33 @@ class FAQ extends Component {
   render(){
     return(
   
-        <div>
+        <div className="text-center bg-light">
           <AppNavbar />
-  <Accordion 
+  <Accordion className="text"
     flush
     toggle={function noRefCheck(){}}
   >
-    <AccordionItem>
-      <AccordionHeader targetId="1" onClick={this.toggle}>
-        Food options at the camping
+    <AccordionItem className="text">
+      <AccordionHeader className="faq-text" targetId="1" onClick={this.toggle}>
+       <b>Food options at the camping</b> 
       </AccordionHeader>
-      <AccordionItem accordionid="1">
+      <AccordionItem accordionid="1" className="faq-text">
         We'll provide a breakfast bar with some juices, sandwitches in the morning but we highly encourage you to bring your own supplies or enjoy the food trucks that'll be available for you in the festival.
       </AccordionItem>
     </AccordionItem>
     <AccordionItem>
-      <AccordionHeader onClick={this.toggle} targetId="2">
-        Will vegetarian/vegan food options be provided during the festival?
+      <AccordionHeader className="faq-text" onClick={this.toggle} targetId="2">
+        <b>Will vegetarian/vegan food options be provided during the festival?</b>
       </AccordionHeader>
-      <AccordionItem onClick={this.toggle} accordionid="2">
+      <AccordionItem className="faq-text" onClick={this.toggle} accordionid="2">
         We are making sure to acomodate everyones dietary choices, therefore we'll be providing food options for many different dietary requirements.
       </AccordionItem>
     </AccordionItem>
     <AccordionItem>
-      <AccordionHeader targetId="3">
-        Can I bring my own alcohol to the festival?
+      <AccordionHeader  targetId="3">
+       <b> Can I bring my own alcohol to the festival?</b>
       </AccordionHeader>
-      <AccordionItem accordionid="3">
+      <AccordionItem  accordionid="3">
        You can bring your own alcohol to the camping, but not to the festival. However, we make it our mission to ensure the supply during the festival in our bar stands. 
       </AccordionItem>
     </AccordionItem>
