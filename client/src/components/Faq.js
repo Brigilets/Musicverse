@@ -1,63 +1,55 @@
-import React from "react";
-import { useState, Component } from "react";
-import { Accordion, AccordionItem, AccordionHeader } from "reactstrap";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import AppNavbar from "./AppNavbar";
-import Footer from "./Footer";
+import React, { Fragment, useState } from 'react';
+import { Collapse, CardBody, Card, CardHeader } from 'reactstrap';
+//import AppNavbar from './AppNavbar';
+//import Footer from "./footer";
 
-class FAQ extends Component {
-  
-  state={
-    stayOpen: false,
-  }
-  toggle = () => {
-    this.setState({
-      stayOpen: !this.state.isOpen
-    });
-  };
+const FAQ = () => {
+    const [isOpen, setIsOpen] = useState('');
+    const [lists, setLists] = useState([
+        {
+            _id: 'id_abc',
+            item_names: ['item 1', 'item 2', 'item 3'],
+            list_name: 'List 2',
+            author_name: 'Samantha Samson',
+        },
+        {
+            _id: 'id_xyz',
+            item_names: ['item 1', 'item 1', 'item 2', 'item 16'],
+            list_name: 'List 1',
+            author_name: 'John Johnson',
+        },
+    ]);
+    const handleToggle = (id) => {
+      if (isOpen === id) {
+        setIsOpen("");
+      } else {
+        setIsOpen(id);
+      }
+    };
+return (
  
 
-  render(){
-    return(
+    <Fragment>
+        {lists.map((list) => (
+            <Card key={list._id}>
+                <CardHeader onClick={() => handleToggle(list._id)}>
+                    <h4>{list.list_name}</h4>
+                </CardHeader>
+                <Collapse isOpen={isOpen === list._id }>
+                    <CardBody>
+                        <ul>
+                            {list.item_names.map((item) => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
+                    </CardBody>
+                </Collapse>
+            </Card>
+        ))}
+    </Fragment>
+   
   
-        <div className="text-center bg-light">
-          <AppNavbar />
-  <Accordion className="text"
-    flush
-    toggle={function noRefCheck(){}}
-  >
-    <AccordionItem className="text">
-      <AccordionHeader className="faq-text" targetId="1" onClick={this.toggle}>
-       <b>Food options at the camping</b> 
-      </AccordionHeader>
-      <AccordionItem accordionid="1" className="faq-text">
-        We'll provide a breakfast bar with some juices, sandwitches in the morning but we highly encourage you to bring your own supplies or enjoy the food trucks that'll be available for you in the festival.
-      </AccordionItem>
-    </AccordionItem>
-    <AccordionItem>
-      <AccordionHeader className="faq-text" onClick={this.toggle} targetId="2">
-        <b>Will vegetarian/vegan food options be provided during the festival?</b>
-      </AccordionHeader>
-      <AccordionItem className="faq-text" onClick={this.toggle} accordionid="2">
-        We are making sure to acomodate everyones dietary choices, therefore we'll be providing food options for many different dietary requirements.
-      </AccordionItem>
-    </AccordionItem>
-    <AccordionItem>
-      <AccordionHeader  targetId="3">
-       <b> Can I bring my own alcohol to the festival?</b>
-      </AccordionHeader>
-      <AccordionItem  accordionid="3">
-       You can bring your own alcohol to the camping, but not to the festival. However, we make it our mission to ensure the supply during the festival in our bar stands. 
-      </AccordionItem>
-    </AccordionItem>
-  </Accordion>
- <Footer />
-</div>
-    )
-}
-}
+);
+                            }
+export default FAQ
 
-
-export default FAQ;

@@ -15,7 +15,7 @@ export class Logout extends Component {
         return (
             <div>
                 <Fragment>
-<Link to="/home"><NavItem onClick={this.props.logout} href="#"><span className="text-secondary btn-text"><b>Logout</b></span></NavItem></Link>
+<NavItem onClick={this.props.logout} href="#"><Link to="/home"><span className="text-secondary btn-text"><b>Logout</b></span></Link></NavItem>
                 </Fragment>
             </div>
         )

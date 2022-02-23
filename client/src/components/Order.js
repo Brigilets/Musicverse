@@ -22,9 +22,8 @@ class Orders extends Component {
 
     ongetOrders = async (id) => {
         await this.props.getOrders(id);
-       this.state.loaded = true; /*setState({loaded: true})*/
+       this.state.loaded = true; 
     }
-
     render(){
         const user = this.props.user;
         console.log(user)
