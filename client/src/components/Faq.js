@@ -20,6 +20,11 @@ const FAQ = () => {
             _id: '3',
             item_names : ["You can bring your own alcohol to the camping, but not to the festival. However, we make it our mission to ensure the supply during the festival in our bar stands."],
             list_name : "Can I bring my own alcohol to the festival?"
+        },
+        {
+            _id: '3',
+            item_names: ["Please bring your own sleeping bag, we'll provide the tent, additional rain cover (just in case) and foldable chairs (amount corresponds to the number of people the tent can accomodate)."],
+            list_name: "I rented a ten, what will be provided along with the tent?"
         }
     ]);
     const handleToggle = (id) => {
@@ -52,6 +57,7 @@ return (
         ))}
       
     </Fragment>
+    <h3 className='contact'>Contact Us</h3>
     <Contact />
    </div>
    <Footer />
