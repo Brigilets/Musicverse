@@ -10,7 +10,8 @@ import LineUp from './Lineup';
 import Philosophy from './Philosophy';
 import FAQ from './Faq';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import FAQ1 from './Faq1';
+import Contact from './Contact';
+
 
 const Main =() =>{
     return (
@@ -34,8 +35,11 @@ const Main =() =>{
                 <Route path='/cart'>
                     <Cart/>
                 </Route>
-                <Route path='/faq1'>
+                <Route path='/faq'>
                     <FAQ/>
+                </Route>
+                <Route path="/contact">
+                    <Contact/>
                 </Route>
                 <Route path='/orders'>
                     <Orders/>
