@@ -24,7 +24,7 @@ const FAQ = () => {
         {
             _id: '3',
             item_names: ["Please bring your own sleeping bag, we'll provide the tent, additional rain cover (just in case) and foldable chairs (amount corresponds to the number of people the tent can accomodate)."],
-            list_name: "I rented a ten, what will be provided along with the tent?"
+            list_name: "I rented a tent, what will be provided along with the tent?"
         }
     ]);
     const handleToggle = (id) => {

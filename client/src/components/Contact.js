@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './_Contact.scss'
-import {Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import {Form, FormGroup, Label, Input, Button } from 'reactstrap';
+
 const  Contact = () => {
   const form = useRef();
+ 
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -11,6 +13,7 @@ const  Contact = () => {
     emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_USER_ID)
       .then((result) => {
           console.log(result.text);
+      
       }, (error) => {
           console.log(error.text);
       });
@@ -63,9 +66,11 @@ const  Contact = () => {
       type="text"
     />
   </FormGroup>
+ 
   <Button className='mt-4'>
-    Submit
+    Send 
   </Button>
+ 
 </Form>
   );
 };
