@@ -7,7 +7,8 @@ export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: USER_LOADING });
 
     axios.get('/api/user', tokenConfig(getState))
-        .then(res => dispatch({
+        .then(res => 
+           dispatch({
             type: USER_LOADED,
             payload: res.data
         }))

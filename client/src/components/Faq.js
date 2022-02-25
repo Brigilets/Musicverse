@@ -22,7 +22,7 @@ const FAQ = () => {
             list_name : "Can I bring my own alcohol to the festival?"
         },
         {
-            _id: '3',
+            _id: '4',
             item_names: ["Please bring your own sleeping bag, we'll provide the tent, additional rain cover (just in case) and foldable chairs (amount corresponds to the number of people the tent can accomodate)."],
             list_name: "I rented a tent, what will be provided along with the tent?"
         }
@@ -40,7 +40,7 @@ return (
 <div className='content'>
     <Fragment>
         {lists.map((list, key) => (
-            <Card className="col-md-6 m-1 ml-md-4 mt-2 justify-content-center " key={list._id}>
+            <Card className="col-md-8 m-1 ml-md-4 mt-2 justify-content-center " key={list._id}>
                 <CardHeader onClick={() => handleToggle(list._id)}>
                     <h4>{list.list_name}</h4>
                 </CardHeader>

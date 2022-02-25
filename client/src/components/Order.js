@@ -28,7 +28,6 @@ class Orders extends Component {
 
     
     ongetOrders =  (id) => {
-     
        this.props.getOrders(id);
        this.setState({
            loaded:true,
@@ -38,6 +37,7 @@ class Orders extends Component {
 }
 
     render(){
+       console.log('props from orders',this.props)
         const user = this.props.user;
         console.log(user)
        if(this.props.isAuthenticated && !this.props.order.loading && !this.state.loaded){
@@ -46,9 +46,6 @@ class Orders extends Component {
         }
         console.log('this state loaded order', this.state.loaded)
 
-        console.log('is authenticated', this.props.isAuthenticated);
-        console.log('is loading', !this.props.order.loading);
-        console.log('is loaded', this.state.loaded)
         console. log('orders length', this.props.order.orders.length ) 
         return(
             <div>
@@ -101,5 +98,6 @@ const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user,
 })
+
 
 export default connect(mapStateToProps, {getOrders})(Orders);

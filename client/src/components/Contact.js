@@ -5,7 +5,6 @@ import {Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const  Contact = () => {
   const form = useRef();
- 
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -66,8 +65,21 @@ const  Contact = () => {
       type="text"
     />
   </FormGroup>
- 
-  <Button className='mt-4'>
+  <FormGroup className="mb-2 me-sm-2 mb-sm-0">
+    <Label
+      className="me-sm-2 mt-2"
+      for="exampleSubject"
+    >
+      Message
+    </Label>
+    <Input
+      id="exampleMessage"
+      name="message"
+      placeholder="Type your message"
+      type="textarea"
+    />
+  </FormGroup>
+  <Button onClick={sendEmail} >
     Send 
   </Button>
  
