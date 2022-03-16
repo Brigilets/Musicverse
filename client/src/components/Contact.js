@@ -19,6 +19,7 @@ const  Contact = () => {
   };
 
   return (
+    <div>
     <Form inline
     className='col-md-6 mr-3 mb-3 bg-light justify-items-center form'
     >
@@ -84,6 +85,7 @@ const  Contact = () => {
   </Button>
  
 </Form>
+</div>
   );
 };
 export default Contact

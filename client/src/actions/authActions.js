@@ -7,11 +7,11 @@ export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: USER_LOADING });
 
     axios.get('/api/user', tokenConfig(getState))
-        .then(res => 
+        .then(res => { console.log('data from auth auctions', res.data)
            dispatch({
             type: USER_LOADED,
             payload: res.data
-        }))
+        })})
         .catch(err => {
             dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({

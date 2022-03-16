@@ -57,7 +57,7 @@ return (
         ))}
       
     </Fragment>
-    <h3 className='contact'>Contact Us</h3>
+    <h3 className='contact pb-5'>Contact Us</h3>
     <Contact />
    </div>
    <Footer />
