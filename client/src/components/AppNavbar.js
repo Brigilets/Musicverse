@@ -85,12 +85,14 @@ class AppNavbar extends Component {
           expand="sm"
           className="navbar navbar-fluid "
         >
-          <Container>
+          <Container className="navContainer">
             <NavbarBrand className="brand" href="/home">
               MUSICVERSE
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+          </Container>
+          <Container>
+          <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" color="white" navbar>
                 {isAuthenticated ? authLinks : guestLinks}
               </Nav>
