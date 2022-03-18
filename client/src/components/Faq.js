@@ -35,7 +35,7 @@ const FAQ = () => {
       }
     };
 return (
- <div className='question bg-light'>
+ <div className='question bg-light'> 
 <AppNavbar />
 <div className='content'>
     <Fragment>
