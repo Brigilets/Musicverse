@@ -19,8 +19,9 @@ const  Contact = () => {
   };
 
   return (
+    <div>
     <Form inline
-    className='col-md-6 mr-3 mb-3 bg-light justify-items-center form'
+    className='col-sx-12 col-md-10 mr-3 mb-4 col-lg-10 bg-light justify-items-center form'
     >
       <FormGroup className="mb-2 me-sm-3 mb-sm-1">
     <Label
@@ -79,11 +80,12 @@ const  Contact = () => {
       type="textarea"
     />
   </FormGroup>
-  <Button onClick={sendEmail} >
+  <Button onClick={sendEmail} className="mt-2 mb-3">
     Send 
   </Button>
  
 </Form>
+</div>
   );
 };
 export default Contact
