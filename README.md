@@ -25,8 +25,8 @@ Fictive festival website, built for learning purposes. My first Fullstack projec
 
  ### Runing the project locally
  
- npm install
- npm run dev 
+ - npm install
+ - npm run dev 
   
   ### Prequisites 
   
