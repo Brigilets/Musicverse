@@ -4,7 +4,7 @@
 config/
 node_modules/
 .env
-client/.env
+/client/.env
 
 
 /.pnp
